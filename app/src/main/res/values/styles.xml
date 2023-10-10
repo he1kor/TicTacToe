@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="cellImage">
+        <item name="android:background">@drawable/cell</item>
+    </style>
+    <style name="cell">
+        <item name="android:background">@drawable/cell</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:layout_weight" >1</item>
+        <item name="android:layout_width" >1dp</item>
+        <item name="android:layout_height" >match_parent</item>
+    </style>
+
+    <style name="row">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="cross">
+        <item name="android:background">@drawable/cross</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+</resources>
