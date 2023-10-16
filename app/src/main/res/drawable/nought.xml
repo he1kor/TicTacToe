@@ -6,6 +6,8 @@
             android:shape="ring"
             android:thickness="25dp"
             android:useLevel="false">
+            <size android:height="90dp"
+                android:width="90dp"/>
             <gradient
                 android:type="radial"
                 android:startColor="@color/chipUp"

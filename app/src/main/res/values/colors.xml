@@ -8,10 +8,17 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="background">#FFF1A2</color>
-    <color name="cellUp">#FFE0C9</color>
-    <color name="cellBottom">#DAB3A3</color>
+    <color name="backgroundUp">#FFF1A2</color>
+    <color name="backgroundBottom">#ECDD8A</color>
+
+    <color name="cellCommonUp">#FFE0C9</color>
+    <color name="cellCommonBottom">#DAB3A3</color>
+    <color name="cellVictoriousUp">#FF872E</color>
+    <color name="cellVictoriousBottom">#FF5611</color>
 
     <color name="chipUp">#67544C</color>
     <color name="chipBottom">#574840</color>
+
+    <color name="buttonUp">#88D6C4</color>
+    <color name="buttonBottom">#8EECC3</color>
 </resources>

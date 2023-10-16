@@ -3,13 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/button.xml" value="0.1745" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/cell.xml" value="0.212" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/cell_common.xml" value="0.2455" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/cell_victorious.xml" value="0.2205" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/cross.xml" value="0.2205" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/gradient_background.xml" value="0.1745" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2255" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/nought.xml" value="0.2475" />
-        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/activity_main.xml" value="0.136" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/cell.xml" value="0.2" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/row.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/score_counter.xml" value="0.33076923076923076" />
       </map>
     </option>
   </component>

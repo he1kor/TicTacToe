@@ -4,8 +4,8 @@
         <shape
             android:shape="rectangle">
             <gradient
-                android:startColor="@color/cellUp"
-                android:endColor="@color/cellBottom"
+                android:startColor="@color/cellCommonUp"
+                android:endColor="@color/cellCommonBottom"
                 android:angle="270"/>
             <corners
                 android:radius="25dp" />
@@ -21,8 +21,8 @@
             android:shape="rectangle">
 
             <gradient
-                android:startColor="@color/cellUp"
-                android:endColor="@color/cellBottom"
+                android:startColor="@color/cellCommonUp"
+                android:endColor="@color/cellCommonBottom"
                 android:angle="270" />
             <corners
                 android:radius="25dp" />

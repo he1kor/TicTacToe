@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">TicTacToe</string>
+    <string name="new_game_button">New</string>
+    <string name="score_divider">:</string>
+
+    <string name="noughts_turn_text">Noughts\' turn</string>
+    <string name="crosses_turn_text">Crosses\' turn</string>
+    <string name="noughts_win">Noughts win!</string>
+    <string name="crosses_win">Crosses win!</string>
+    <string name="draw">Draw!</string>
 </resources>
