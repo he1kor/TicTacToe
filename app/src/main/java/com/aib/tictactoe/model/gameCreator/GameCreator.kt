@@ -25,7 +25,7 @@ class GameCreator {
 
     fun create(){
         notifyNewGameListeners()
-        notifyTableSizeListeners(Config.tableSize)
+        notifyTableSizeListeners(Config.tableSize.sideLength)
     }
     private fun notifyNewGameListeners(){
         for (newGameListener in newGameListeners){
