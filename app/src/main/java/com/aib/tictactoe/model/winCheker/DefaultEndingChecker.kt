@@ -7,7 +7,7 @@ import com.aib.tictactoe.model.data.EndingStatus
 import com.aib.tictactoe.model.data.Vector
 import com.aib.tictactoe.model.table.Table
 
-class DefaultEndingChecker(_table: Table, _winCellsAmount: Int) : EndingChecker {
+class DefaultEndingChecker(_winCellsAmount: Int) : EndingChecker {
     private val shiftVectors = arrayOf(
         Vector(0, 1),
         Vector(1, 0),
@@ -15,9 +15,13 @@ class DefaultEndingChecker(_table: Table, _winCellsAmount: Int) : EndingChecker 
         Vector(1, -1)
     )
 
-    private val table = _table
+    private lateinit var table: Table
     private var winCellsAmount = _winCellsAmount
     private val endingStatusListeners = ArrayList<EndingStatusListener>()
+
+    fun linkTable(table: Table){
+        this.table = table
+    }
 
     override fun addGameStatusListener(endingStatusListener: EndingStatusListener){
         endingStatusListeners.add(endingStatusListener)

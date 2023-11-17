@@ -27,7 +27,7 @@ class ModelInitializer(_container: RepositoryContainer) {
         turnProcessor = TurnProcessor()
         scoreCounter = ScoreCounter()
         gameCreator = GameCreator()
-        endingChecker = DefaultEndingChecker(table, 4)
+        endingChecker = DefaultEndingChecker(4)
     }
 
     fun link(){
@@ -45,6 +45,8 @@ class ModelInitializer(_container: RepositoryContainer) {
 
     private fun linkModels(){
         (table as DefaultTable).addCellUseListener(turnProcessor)
+
+        (endingChecker as DefaultEndingChecker).linkTable(table)
 
         turnProcessor.setEndingChecker(endingChecker)
         turnProcessor.addGameStatusListener(scoreCounter)
