@@ -1,6 +1,5 @@
 package com.aib.tictactoe.model.scoreCounter
 
-import android.util.Log
 import com.aib.tictactoe.model.data.EndingStatus
 import com.aib.tictactoe.model.data.GameStatus
 import com.aib.tictactoe.model.turnProcessor.GameStatusListener

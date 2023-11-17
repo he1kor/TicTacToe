@@ -1,5 +1,6 @@
 package com.aib.tictactoe.model.winCheker
 
+import com.aib.tictactoe.container.configuration.Config
 import com.aib.tictactoe.model.turnProcessor.EndingChecker
 import com.aib.tictactoe.model.cell.Cell
 import com.aib.tictactoe.model.data.Chip
@@ -7,16 +8,9 @@ import com.aib.tictactoe.model.data.EndingStatus
 import com.aib.tictactoe.model.data.Vector
 import com.aib.tictactoe.model.table.Table
 
-class DefaultEndingChecker(_winCellsAmount: Int) : EndingChecker {
-    private val shiftVectors = arrayOf(
-        Vector(0, 1),
-        Vector(1, 0),
-        Vector(1, 1),
-        Vector(1, -1)
-    )
+class DefaultEndingChecker : EndingChecker {
 
     private lateinit var table: Table
-    private var winCellsAmount = _winCellsAmount
     private val endingStatusListeners = ArrayList<EndingStatusListener>()
 
     fun linkTable(table: Table){
@@ -31,7 +25,7 @@ class DefaultEndingChecker(_winCellsAmount: Int) : EndingChecker {
     }
     override fun checkTurn(turnCell: Cell){
         val winCells = ArrayList<Cell>()
-        for (shiftVector in shiftVectors){
+        for (shiftVector in Config.winCondition.shiftVectors){
             val sequentialCells = ArrayList<Cell>()
             sequentialCells.add(turnCell)
 
@@ -39,7 +33,7 @@ class DefaultEndingChecker(_winCellsAmount: Int) : EndingChecker {
             shiftVector.reverse()
             sequentialCells.addAll(getSequentialCells(turnCell, shiftVector))
 
-            if (sequentialCells.size >= winCellsAmount)
+            if (sequentialCells.size >= Config.winCondition.winCellsAmount)
                 winCells.addAll(sequentialCells)
         }
         determineGameStatus(winCells)

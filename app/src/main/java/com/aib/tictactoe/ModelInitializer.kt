@@ -27,7 +27,7 @@ class ModelInitializer(_container: RepositoryContainer) {
         turnProcessor = TurnProcessor()
         scoreCounter = ScoreCounter()
         gameCreator = GameCreator()
-        endingChecker = DefaultEndingChecker(4)
+        endingChecker = DefaultEndingChecker()
     }
 
     fun link(){

@@ -1,5 +1,6 @@
 package com.aib.tictactoe.model.gameCreator
 
+import com.aib.tictactoe.container.configuration.Config
 import com.aib.tictactoe.model.table.TableSizeListener
 
 class GameCreator {
@@ -24,16 +25,16 @@ class GameCreator {
 
     fun create(){
         notifyNewGameListeners()
-        notifyTableSizeListeners()
+        notifyTableSizeListeners(Config.tableSize)
     }
     private fun notifyNewGameListeners(){
         for (newGameListener in newGameListeners){
             newGameListener.onNewGame()
         }
     }
-    private fun notifyTableSizeListeners(){
+    private fun notifyTableSizeListeners(size: Int){
         for (tableSizeListener in tableSizeListeners){
-            tableSizeListener.onTableSizeUpdate(5)
+            tableSizeListener.onTableSizeUpdate(size)
         }
     }
 }
