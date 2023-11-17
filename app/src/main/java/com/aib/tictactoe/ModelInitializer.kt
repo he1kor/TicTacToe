@@ -5,6 +5,7 @@ import com.aib.tictactoe.model.gameCreator.GameCreator
 import com.aib.tictactoe.model.scoreCounter.ScoreCounter
 import com.aib.tictactoe.model.turnProcessor.TurnProcessor
 import com.aib.tictactoe.model.winCheker.DefaultEndingChecker
+import com.aib.tictactoe.model.table.DefaultTable
 import com.aib.tictactoe.model.table.Table
 import com.aib.tictactoe.model.turnProcessor.EndingChecker
 import com.aib.tictactoe.repository.cell.CellTableRepository
@@ -22,7 +23,7 @@ class ModelInitializer(_container: RepositoryContainer) {
     lateinit var gameCreator: GameCreator
 
     fun initialize(){
-        table = Table()
+        table = DefaultTable()
         turnProcessor = TurnProcessor()
         scoreCounter = ScoreCounter()
         gameCreator = GameCreator()
@@ -43,7 +44,7 @@ class ModelInitializer(_container: RepositoryContainer) {
     }
 
     private fun linkModels(){
-        table.addCellUseListener(turnProcessor)
+        (table as DefaultTable).addCellUseListener(turnProcessor)
 
         turnProcessor.setEndingChecker(endingChecker)
         turnProcessor.addGameStatusListener(scoreCounter)

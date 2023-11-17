@@ -3,79 +3,13 @@ package com.aib.tictactoe.model.table
 import com.aib.tictactoe.model.cell.Cell
 import com.aib.tictactoe.model.turnProcessor.CellFillListener
 
-class Table : TableSizeListener, Cell.CellUseListener, CellFillListener{
+interface Table : TableSizeListener, Cell.CellUseListener, CellFillListener{
+    val cellMatrix : ArrayList<ArrayList<Cell>>
+    val cellCount: Int
+    val filledCells: Int
 
-    val cellMatrix = ArrayList<ArrayList<Cell>>()
-
-    var cellCount = 0
-        private set
-
-    var filledCells = 0
-        private set
-
-    private val sizeListeners = ArrayList<TableSizeListener>()
-    private val cellUseListeners = ArrayList<Cell.CellUseListener>()
-
-    fun resize(size: Int){
-        clear()
-        create(size)
-    }
-
-    fun clear(){
-        cellMatrix.clear()
-        filledCells = 0
-        cellCount = 0
-    }
-
-    fun create(size: Int){
-        calculateCellCount(size)
-        for (r in 0 until size){
-            cellMatrix.add(ArrayList())
-            for (c in 0 until size){
-                createCell(r, c)
-            }
-        }
-        notifySizeListeners(size)
-    }
-
-    private fun createCell(row: Int, column: Int){
-        cellMatrix[row].add(Cell(row, column))
-        cellMatrix[row][column].addCellUseListener(this)
-    }
-    private fun calculateCellCount(sideSize: Int){
-        cellCount = sideSize * sideSize
-    }
-    fun addCellUseListener(cellUseListener: Cell.CellUseListener){
-        cellUseListeners.add(cellUseListener)
-    }
-    fun addSizeListener(sizeListener: TableSizeListener){
-        sizeListeners.add(sizeListener)
-    }
-    fun removeSizeListener(sizeListener: TableSizeListener){
-        sizeListeners.remove(sizeListener)
-    }
-    fun removeCellUseListener(cellUseListener: Cell.CellUseListener){
-        cellUseListeners.remove(cellUseListener)
-    }
-
-    private fun notifySizeListeners(size: Int){
-        sizeListeners.forEach { sizeListener ->
-            sizeListener.onTableSizeUpdate(size)
-        }
-    }
-
-
-    override fun onFilled(cell: Cell) {
-        filledCells++
-    }
-
-    override fun onTableSizeUpdate(size: Int) {
-        resize(size)
-    }
-
-    override fun onUse(cell: Cell) {
-        cellUseListeners.forEach { cellUseListener ->
-            cellUseListener.onUse(cell)
-        }
-    }
+    fun addCellUseListener(cellUseListener: Cell.CellUseListener)
+    fun addSizeListener(sizeListener: TableSizeListener)
+    fun removeSizeListener(sizeListener: TableSizeListener)
+    fun removeCellUseListener(cellUseListener: Cell.CellUseListener)
 }

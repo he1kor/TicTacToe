@@ -1,7 +1,7 @@
 package com.aib.tictactoe.repository.cell
 
-import com.aib.tictactoe.model.table.Table
 import com.aib.tictactoe.model.cell.CellUpdateListener
+import com.aib.tictactoe.model.table.Table
 
 class CellTableRepository : CellRepository {
     lateinit var table: Table
