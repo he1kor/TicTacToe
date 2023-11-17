@@ -1,7 +1,7 @@
 package com.aib.tictactoe
 
-import com.aib.tictactoe.listener.NewGameListener
-import com.aib.tictactoe.logic.GameCreator
+import com.aib.tictactoe.model.gameCreator.NewGameListener
+import com.aib.tictactoe.model.gameCreator.GameCreator
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test

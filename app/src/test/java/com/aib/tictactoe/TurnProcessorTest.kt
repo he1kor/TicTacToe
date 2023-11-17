@@ -1,9 +1,10 @@
 package com.aib.tictactoe
 
-import com.aib.tictactoe.listener.NextTurnListener
-import com.aib.tictactoe.listener.OnMoveListener
-import com.aib.tictactoe.listener.OnWinListener
-import com.aib.tictactoe.logic.TurnProcessor
+import com.aib.tictactoe.model.turnProcessor.EndingChecker
+import com.aib.tictactoe.model.turnProcessor.TurnProcessor
+import com.aib.tictactoe.model.data.Chip
+import com.aib.tictactoe.model.data.EndGameStatus
+import com.aib.tictactoe.view.CellFragment
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -11,14 +12,14 @@ import org.junit.Test
 class TurnProcessorTest {
 
     private lateinit var turnProcessor: TurnProcessor
-    private lateinit var onMoveListener: OnMoveListener
+    private lateinit var endingChecker: EndingChecker
     private lateinit var nextTurnListener: NextTurnListener
     private lateinit var onWinListener: OnWinListener
 
     @Before
     fun setUp() {
         turnProcessor = TurnProcessor()
-        onMoveListener = object : OnMoveListener {
+        endingChecker = object : EndingChecker {
             var cellFragment : CellFragment? = null
             override fun onMove(cell: CellFragment) {
                 cellFragment = cell
@@ -44,8 +45,8 @@ class TurnProcessorTest {
                 test = 3
             }
         }
-        turnProcessor.setOnMoveListener(onMoveListener)
-        turnProcessor.setNextTurnListener(nextTurnListener)
+        turnProcessor.setEndingChecker(endingChecker)
+        turnProcessor.addNextTurnListener(nextTurnListener)
         turnProcessor.addOnWinListener(onWinListener)
     }
 
@@ -65,7 +66,7 @@ class TurnProcessorTest {
         cell.state = Chip.EMPTY
         val field = TurnProcessor::class.java.getDeclaredField("gameStatus")
         field.isAccessible = true
-        field.set(turnProcessor, GameStatus.DRAW)
+        field.set(turnProcessor, EndGameStatus.DRAW)
 
         turnProcessor.onClick(cell)
         assertEquals(Chip.EMPTY, cell.state)
@@ -82,20 +83,20 @@ class TurnProcessorTest {
 
     @Test
     fun testOnGameStatusUpdate() {
-        turnProcessor.onGameStatusUpdate(GameStatus.DRAW)
-        assertEquals(GameStatus.DRAW, turnProcessor.gameStatus)
+        turnProcessor.onGameStatusUpdate(EndGameStatus.DRAW)
+        assertEquals(EndGameStatus.DRAW, turnProcessor.endGameStatus)
     }
 
     @Test
     fun testOnGameStatusWhenStatusIsPlay() {
-        turnProcessor.onGameStatusUpdate(GameStatus.PLAY)
+        turnProcessor.onGameStatusUpdate(EndGameStatus.PLAY)
 
         assertEquals(Chip.NOUGHT, turnProcessor.currentTurn)
     }
 
     @Test
     fun testOnGameStatusWhenStatusIsNotPlay() {
-        turnProcessor.onGameStatusUpdate(GameStatus.DRAW)
+        turnProcessor.onGameStatusUpdate(EndGameStatus.DRAW)
         val field = TurnProcessor::class.java.getDeclaredField("onWinListeners")
         field.isAccessible = true
         var onWinListener = (field.get(turnProcessor) as ArrayList<*>)[0]
@@ -110,7 +111,7 @@ class TurnProcessorTest {
     fun testClear_ResetsGameStatusAndCurrentTurn() {
         turnProcessor.clear()
 
-        assertEquals(GameStatus.PLAY, turnProcessor.gameStatus)
+        assertEquals(EndGameStatus.PLAY, turnProcessor.endGameStatus)
         assertEquals(Chip.CROSS, turnProcessor.currentTurn)
     }
 
@@ -157,7 +158,7 @@ class TurnProcessorTest {
     fun testNotifyOnWinListenerCallsOnDraw() {
         val field = TurnProcessor::class.java.getDeclaredField("gameStatus")
         field.isAccessible = true
-        field.set(turnProcessor, GameStatus.DRAW)
+        field.set(turnProcessor, EndGameStatus.DRAW)
 
         val method = TurnProcessor::class.java.getDeclaredMethod("notifyOnWinListener")
         method.isAccessible = true
@@ -173,7 +174,7 @@ class TurnProcessorTest {
     fun testNotifyOnWinListenerCallsOnNoughtWin() {
         val field = TurnProcessor::class.java.getDeclaredField("gameStatus")
         field.isAccessible = true
-        field.set(turnProcessor, GameStatus.NOUGHTS_WIN)
+        field.set(turnProcessor, EndGameStatus.NOUGHTS_WIN)
 
         val method = TurnProcessor::class.java.getDeclaredMethod("notifyOnWinListener")
         method.isAccessible = true
@@ -189,7 +190,7 @@ class TurnProcessorTest {
     fun testNotifyOnWinListenerCallsOnCrossesWin() {
         val field = TurnProcessor::class.java.getDeclaredField("gameStatus")
         field.isAccessible = true
-        field.set(turnProcessor, GameStatus.CROSSES_WIN)
+        field.set(turnProcessor, EndGameStatus.CROSSES_WIN)
 
         val method = TurnProcessor::class.java.getDeclaredMethod("notifyOnWinListener")
         method.isAccessible = true
@@ -205,9 +206,9 @@ class TurnProcessorTest {
     fun testOnNewGameCallsClear() {
         val field = TurnProcessor::class.java.getDeclaredField("gameStatus")
         field.isAccessible = true
-        field.set(turnProcessor, GameStatus.DRAW)
+        field.set(turnProcessor, EndGameStatus.DRAW)
         turnProcessor.onNewGame()
 
-        assertEquals(GameStatus.PLAY, turnProcessor.gameStatus)
+        assertEquals(EndGameStatus.PLAY, turnProcessor.endGameStatus)
     }
 }

@@ -1,7 +1,7 @@
 package com.aib.tictactoe
 
-import com.aib.tictactoe.listener.ScoreListener
-import com.aib.tictactoe.logic.ScoreCounter
+import com.aib.tictactoe.model.scoreCounter.ScoreListener
+import com.aib.tictactoe.model.scoreCounter.ScoreCounter
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
