@@ -30,7 +30,7 @@ class TableViewModel(tableSizeRepository: TableSizeRepository) : ViewModel(), Ta
             ): T {
                 val application = checkNotNull(extras[APPLICATION_KEY])
                 return TableViewModel(
-                    (application as TicTacToeApplication).container.tableSizeRepository
+                    (application as TicTacToeApplication).repositories.tableSizeRepository
                 ) as T
             }
         }

@@ -48,7 +48,7 @@ class TurnTextViewModel(gameStatusRepository: GameStatusRepository) : ViewModel(
             ): T {
                 val application = checkNotNull(extras[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY])
                 return TurnTextViewModel(
-                    (application as TicTacToeApplication).container.gameStatusRepository
+                    (application as TicTacToeApplication).repositories.gameStatusRepository
                 ) as T
             }
         }

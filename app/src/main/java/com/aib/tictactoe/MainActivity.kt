@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.aib.tictactoe.databinding.ActivityMainBinding
 import com.aib.tictactoe.view.TableFragment
-import com.aib.tictactoe.viewmodel.TableViewModel
 
 class MainActivity : AppCompatActivity(){
 
@@ -19,7 +18,7 @@ class MainActivity : AppCompatActivity(){
         setContentView(binding.root)
 
         initTable()
-        (application as TicTacToeApplication).modelInitializer.gameCreator.create()
+        (application as TicTacToeApplication).models.gameCreator.create()
     }
     private fun initTable(){
         tableFragment = supportFragmentManager.findFragmentById(R.id.table) as TableFragment

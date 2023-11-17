@@ -51,7 +51,7 @@ class CellViewModel(_cellRepository: CellRepository, _row: Int, _col: Int) : Vie
                 val application = checkNotNull(extras[
                         ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY]
                 )
-                val cellRepository = (application as TicTacToeApplication).container.cellRepository
+                val cellRepository = (application as TicTacToeApplication).repositories.cellRepository
 
                 return CellViewModel(cellRepository, row, col) as T
             }

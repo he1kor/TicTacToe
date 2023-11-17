@@ -23,7 +23,7 @@ class NewGameButtonViewModel(_newGameButtonRepository: NewGameButtonRepository) 
             ): T {
                 val application = checkNotNull(extras[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY])
                 return NewGameButtonViewModel(
-                    (application as TicTacToeApplication).container.newGameButtonRepository
+                    (application as TicTacToeApplication).repositories.newGameButtonRepository
                 ) as T
             }
         }

@@ -38,7 +38,7 @@ class ScoreCounterViewModel(scoreCounterRepository: ScoreCounterRepository) : Vi
             ): T {
                 val application = checkNotNull(extras[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY])
                 return ScoreCounterViewModel(
-                    (application as TicTacToeApplication).container.scoreCounterRepository
+                    (application as TicTacToeApplication).repositories.scoreCounterRepository
                 ) as T
             }
         }
