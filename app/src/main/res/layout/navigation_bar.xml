@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navigation_bar"
+    style="@style/navigation_bar">
+
+    <LinearLayout
+        style="@style/navigation_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageButton
+            style="@style/icon_navigation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_tic_tac_toe_icon" />
+
+        <TextView
+            style="@style/icon_navigation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Game" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/navigation_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageButton
+            style="@style/icon_navigation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_settings_icon" />
+
+        <TextView
+            style="@style/icon_navigation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings" />
+    </LinearLayout>
+
+</LinearLayout>

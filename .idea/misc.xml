@@ -9,13 +9,23 @@
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/cell_victorious.xml" value="0.2205" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/cross.xml" value="0.2205" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/gradient_background.xml" value="0.1745" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/ic_gamepad.xml" value="0.2285" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2255" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/ic_settings_icon.xml" value="0.2285" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/ic_tic_tac_toe_icon.xml" value="0.2285" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/navigation_bar.xml" value="0.2285" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/nought.xml" value="0.2475" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/cell.xml" value="0.2" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/navigation_bar.xml" value="0.2358974358974359" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/navigation_panel.xml" value="0.2358974358974359" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/new_game_button.xml" value="0.3316239316239316" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/new_game_dialog.xml" value="0.264" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/number_picker_setting.xml" value="0.2358974358974359" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/row.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/score_counter.xml" value="0.33076923076923076" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/switch_element.xml" value="0.3316239316239316" />
+        <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/switch_setting.xml" value="0.264" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/table.xml" value="0.33076923076923076" />
         <entry key="..\:/Users/Helkor/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/turn_text.xml" value="0.33076923076923076" />
       </map>
