@@ -1,7 +1,6 @@
-package com.aib.tictactoe.view
+package com.aib.tictactoe.view.gamePart
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

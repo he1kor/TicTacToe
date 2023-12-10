@@ -4,7 +4,7 @@ import com.aib.tictactoe.model.turnProcessor.EndingChecker
 import com.aib.tictactoe.model.turnProcessor.TurnProcessor
 import com.aib.tictactoe.model.data.Chip
 import com.aib.tictactoe.model.data.EndGameStatus
-import com.aib.tictactoe.view.CellFragment
+import com.aib.tictactoe.view.gamePart.CellFragment
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test

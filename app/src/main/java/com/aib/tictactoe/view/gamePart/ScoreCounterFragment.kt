@@ -1,4 +1,4 @@
-package com.aib.tictactoe.view
+package com.aib.tictactoe.view.gamePart
 
 import android.os.Bundle
 import android.view.LayoutInflater
