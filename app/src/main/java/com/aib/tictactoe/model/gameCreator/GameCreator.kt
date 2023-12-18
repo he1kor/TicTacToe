@@ -1,5 +1,6 @@
 package com.aib.tictactoe.model.gameCreator
 
+import android.util.Log
 import com.aib.tictactoe.container.configuration.Config
 import com.aib.tictactoe.model.table.TableSizeListener
 
@@ -21,6 +22,7 @@ class GameCreator {
     }
     fun addTableSizeListener(tableSizeListener: TableSizeListener) {
         tableSizeListeners.add(tableSizeListener)
+        Log.d("transaction",tableSizeListeners.size.toString())
     }
 
     fun create(){
@@ -33,7 +35,9 @@ class GameCreator {
         }
     }
     private fun notifyTableSizeListeners(size: Int){
+        Log.d("transaction", "notifyTableSizeListenersOut")
         for (tableSizeListener in tableSizeListeners){
+            Log.d("transaction", "notifyTableSizeListenersIn")
             tableSizeListener.onTableSizeUpdate(size)
         }
     }

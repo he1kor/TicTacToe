@@ -1,5 +1,6 @@
 package com.aib.tictactoe
 
+import android.util.Log
 import com.aib.tictactoe.container.ModelContainer
 import com.aib.tictactoe.container.RepositoryContainer
 import com.aib.tictactoe.model.winCheker.DefaultEndingChecker
@@ -13,6 +14,7 @@ import com.aib.tictactoe.repository.tableSize.GameTableSizeRepository
 object Linker{
 
     fun link(repositories: RepositoryContainer, models: ModelContainer){
+        Log.d("transaction","Link")
         linkRepositories(repositories, models)
         linkModels(models)
     }

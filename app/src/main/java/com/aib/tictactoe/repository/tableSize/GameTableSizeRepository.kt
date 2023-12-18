@@ -1,5 +1,6 @@
 package com.aib.tictactoe.repository.tableSize
 
+import android.util.Log
 import com.aib.tictactoe.model.table.Table
 import com.aib.tictactoe.model.table.TableSizeListener
 
@@ -16,5 +17,6 @@ class GameTableSizeRepository : TableSizeRepository{
 
     override fun addTableSizeListener(tableSizeListener: TableSizeListener) {
         table.addSizeListener(tableSizeListener)
+        Log.d("transaction","added")
     }
 }

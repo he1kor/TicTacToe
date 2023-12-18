@@ -1,6 +1,7 @@
 package com.aib.tictactoe.view.gamePart
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +24,6 @@ class TableFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         tableBinding = TableBinding.inflate(inflater, container, false)
         setSizeObserver()
         return tableBinding.root
@@ -39,6 +39,7 @@ class TableFragment : Fragment() {
         }
     }
     private fun resize(size: Int){
+        Log.d("transaction", "resize")
         val fragmentTransaction = parentFragmentManager.beginTransaction()
 
         clear(fragmentTransaction)

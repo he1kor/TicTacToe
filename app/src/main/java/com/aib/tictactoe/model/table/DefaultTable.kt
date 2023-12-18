@@ -1,5 +1,6 @@
 package com.aib.tictactoe.model.table
 
+import android.util.Log
 import com.aib.tictactoe.model.cell.Cell
 
 class DefaultTable : Table{
@@ -27,6 +28,7 @@ class DefaultTable : Table{
     }
 
     fun create(size: Int){
+        Log.d("transaction","Create")
         calculateCellCount(size)
         for (r in 0 until size){
             cellMatrix.add(ArrayList())
@@ -34,7 +36,9 @@ class DefaultTable : Table{
                 createCell(r, c)
             }
         }
+        Log.d("transaction","CreateEnd")
         notifySizeListeners(size)
+        Log.d("transaction","CreateEndEnd")
     }
 
     private fun createCell(row: Int, column: Int){
@@ -58,7 +62,9 @@ class DefaultTable : Table{
     }
 
     private fun notifySizeListeners(size: Int){
+        Log.d("transaction","DefaultTableOut")
         sizeListeners.forEach { sizeListener ->
+            Log.d("transaction","DefaultTableIn")
             sizeListener.onTableSizeUpdate(size)
         }
     }
@@ -69,6 +75,7 @@ class DefaultTable : Table{
     }
 
     override fun onTableSizeUpdate(size: Int) {
+        Log.d("transaction","DefaultTableUpdate")
         resize(size)
     }
 

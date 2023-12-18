@@ -1,5 +1,6 @@
 package com.aib.tictactoe.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -18,6 +19,7 @@ class TableViewModel(tableSizeRepository: TableSizeRepository) : ViewModel(), Ta
     val size: LiveData<Int> = _size
 
     override fun onTableSizeUpdate(size: Int) {
+        Log.d("transaction", "onTableSizeUpdate")
         _size.value = size
     }
 

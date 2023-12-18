@@ -15,5 +15,6 @@ class TicTacToeApplication : Application() {
         models = DefaultModelContainer()
 
         Linker.link(repositories, models)
+        models.gameCreator.create()
     }
 }

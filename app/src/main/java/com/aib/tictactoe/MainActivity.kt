@@ -2,6 +2,7 @@ package com.aib.tictactoe
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
@@ -20,7 +21,12 @@ class MainActivity : AppCompatActivity(), Navigator{
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        (application as TicTacToeApplication).models.gameCreator.create()
+        if (savedInstanceState == null) {
+            val initialFragment = GamePartFragment()
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragment_container, initialFragment)
+                .commit()
+        }
     }
 
 
@@ -40,13 +46,6 @@ class MainActivity : AppCompatActivity(), Navigator{
         supportFragmentManager.commit {
             replace<T>(binding.fragmentContainer.id, tag)
             addToBackStack(tag)
-        }
-    }
-    override fun onBackPressed() {
-        if (supportFragmentManager.backStackEntryCount > 0) {
-            supportFragmentManager.popBackStack()
-        } else {
-            super.onBackPressed()
         }
     }
 }
